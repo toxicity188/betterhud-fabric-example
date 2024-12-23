@@ -19,9 +19,21 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${properties["loader_version"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${properties["fabric_version"]}")
 
-    compileOnly("io.github.toxicity188:BetterHud-standard-api:1.11")
+    //BetterHud API
+    compileOnly("io.github.toxicity188:BetterHud-standard-api:1.11.1")
+    modCompileOnly("io.github.toxicity188:BetterHud-fabric-api:1.11.1")
+
+    //BetterHud Library
     compileOnly("io.github.toxicity188:BetterCommand:1.4.1")
-    modCompileOnly("io.github.toxicity188:BetterHud-fabric-api:1.11")
+    modCompileOnly("net.kyori:adventure-platform-mod-shared-fabric-repack:${properties["kyori_mod_implementation"]}")
+    modCompileOnly("net.kyori:adventure-platform-fabric:${properties["kyori_mod_implementation"]}")
+
+    //Lombok
+    compileOnly("org.projectlombok:lombok:1.18.36")
+    annotationProcessor("org.projectlombok:lombok:1.18.36")
+
+    testCompileOnly("org.projectlombok:lombok:1.18.36")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.36")
 
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
